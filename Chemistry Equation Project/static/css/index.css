@@ -1,0 +1,83 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(32, 29, 29);
+}
+
+/* Card */
+
+.card {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* Title */
+
+.card h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: white;
+}
+
+#main-card h1 {
+    padding-top: 8rem;
+}
+
+/* Search Bar */
+
+#searchForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#searchInput {
+    width: 30rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: white;
+}
+
+#searchButton {
+    height: 2.1rem;
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    background-color: rgb(96, 211, 96);
+    width: 5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+/* "Show All" Button */
+
+#showAllBtn {
+    height: 2.5rem;
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    width: 8rem;
+    font-size: 1.3rem;
+    color: rgb(96, 211, 96);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+#showAllBtn:hover {
+    background-color: rgb(96, 211, 96);
+    color: white;
+}

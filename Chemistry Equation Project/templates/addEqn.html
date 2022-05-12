@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Equation</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/addCompEqn.css') }}>
+
+    <script>
+
+        var reactSides = 0;
+
+        function addReactCompField(){
+            reactSides++;
+            var reactantSide = document.getElementById("reactInputDiv");
+            var compFieldDiv = document.createElement("div");
+            var compName = document.createElement("input");
+            compName.setAttribute("type", "text");
+            compName.setAttribute("placeholder", "Select Compound");
+            compName.setAttribute("name", `reactCompName ${reactSides}`);
+            var compMultiplier = document.createElement("input");
+            compMultiplier.setAttribute("type", "number");
+            compMultiplier.setAttribute("placeholder", "Multiplier");
+            compMultiplier.setAttribute("name", `reactCompMultiplier ${reactSides}`);
+            var compState = document.createElement("input");
+            compState.setAttribute("type", "text");
+            compState.setAttribute("placeholder", "State: 's', 'l', 'g', 'aq'");
+            compState.setAttribute("name", `reactCompState ${reactSides}`);
+
+            compFieldDiv.innerHTML+=`${reactSides}: `;
+            compFieldDiv.appendChild(compName);
+            compFieldDiv.appendChild(compMultiplier);
+            compFieldDiv.appendChild(compState);
+            compFieldDiv.style.color = "white";
+            compFieldDiv.style.fontSize = "20px";
+            compFieldDiv.style.paddingLeft = "20px";
+            compFieldDiv.setAttribute("id", `compFieldDiv ${reactSides}`);
+            reactantSide.appendChild(compFieldDiv);
+        }
+
+        var prodSides = 0;
+
+        function addProdCompField(){
+            prodSides++;
+            var productSide = document.getElementById("prodInputDiv");
+            var compFieldDiv = document.createElement("div");
+            var compName = document.createElement("input");
+            compName.setAttribute("type", "text");
+            compName.setAttribute("placeholder", "Select Compound");
+            compName.setAttribute("name",`prodCompName ${prodSides}`);
+            var compMultiplier = document.createElement("input");
+            compMultiplier.setAttribute("type", "number");
+            compMultiplier.setAttribute("placeholder", "Multiplier");
+            compMultiplier.setAttribute("name",`prodCompMultiplier ${prodSides}`);
+            var compState = document.createElement("input");
+            compState.setAttribute("type", "text");
+            compState.setAttribute("placeholder", "State: 's', 'l', 'g', 'aq'");
+            compState.setAttribute("name",`prodCompState ${prodSides}`);
+
+            compFieldDiv.innerHTML+=`${prodSides}: `;
+            compFieldDiv.appendChild(compName);
+            compFieldDiv.appendChild(compMultiplier);
+            compFieldDiv.appendChild(compState);
+            compFieldDiv.style.color = "white";
+            compFieldDiv.style.fontSize = "20px";
+            compFieldDiv.style.paddingLeft = "20px";
+            compFieldDiv.setAttribute("id", `compFieldDiv ${prodSides}`);
+            productSide.appendChild(compFieldDiv);
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Add Equation</h1>
+
+    <div class="addForm">
+        <form action="" id="EqnForm" method="POST">
+            <div id="reactantSide" class="side">
+                <h3>Reactant Side</h3>
+                <div id="reactInputDiv"></div>
+                <div class="addCompDiv">
+                    <button class="addCompBtn" type="button" onClick="addReactCompField()">+</button>
+                </div>
+            </div>
+            <div id="arrowSide" class="side">
+                <h3>Arrow Side</h3>
+                <input type="text" name="cond_elem" id="cond_elem" placeholder="Elements"/>
+                <input type="text" name="cond_temp" id="cond_temp" placeholder="Temperature"/>
+                <input type="text" name="cond_pres" id="cond_pres" placeholder="Pressure"/>
+                <input type="text" name="catalyst" id="catalyst" placeholder="Catalyst"/>
+            </div>
+            <div id="productSide" class="side">
+                <h3>Product Side</h3>
+                <div id="prodInputDiv"></div>
+                <div class="addCompDiv">
+                    <button class="addCompBtn" type="button" onClick="addProdCompField()">+</button>
+                </div>
+            </div>
+
+            <div id="submitBtn">
+                <input type="submit" value="Add Equation" />
+            </div>
+
+        </form>
+    </div>
+
+    
+
+</body>
+</html>

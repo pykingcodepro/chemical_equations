@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Equations</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/allEqn.css') }}>
+</head>
+<body>
+        <div class="titleBar">
+            <h1>All Equations</h1>
+            <!-- <button type="button" id="filterButton">Filter</button> -->
+        </div>
+
+        <table>
+            <tr>
+                <th class="row1">Sr. No.</th>
+                <th class="row2">Equation</th>
+            </tr>
+            {% for eq in data.eq_json_dict %}
+                <tr>
+                    <td class="row1 mg-2" align="center">{{eq.eq_id+1}}</td>
+                    <td class="row2 mg-2">
+                        <!-- Reactant side -->
+                        {% for react_comp in eq.reactant.compounds %}
+
+                            <!-- Multiplier -->
+                            {% if react_comp.multiplier != 1 %}
+                                {{ react_comp.multiplier }}
+                            {% endif %}
+
+                            {% for comp in data.comp_json_dict %}
+                                {% if comp.comp_id == react_comp.comp_id %}
+                                    <!-- text updating , making numbers down to the alphabets -->
+                                    
+                                    {% for char in comp.symbol %}
+                                        {% if char in data.num_dict %}
+                                            <sub>{{ char }}</sub>
+                                        {% else %}
+                                            {{ char }}
+                                        {% endif %}
+
+                                    {% endfor %}
+
+                                    <!-- State of the compound -->
+                                    <sub>(
+                                        {{ react_comp.state }}
+                                    )</sub>
+
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if react_comp != eq.reactant.compounds|last %}
+                                <pre style="display: inline;" >  +  </pre>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- Reactant Side ends -->
+
+                        <!-- Arrow Start -->
+                        
+                        {% if eq.arrow.conditions|length != 0 %}
+                            <span style="display: inline-block; margin-left:30px;"> --> </span>(
+                            {% for cond in eq.arrow.conditions.Elements %}
+                                {{ cond }}
+                                {% if cond != eq.arrow.conditions.Elements|last %}
+                                    ,
+                                {% endif %}
+                            {% endfor %}
+                            )<span style="display: inline-block; margin-right: 30px;"> --> </span>
+                            {% else %}
+                            <span style="display: inline-block; margin: 0px 30px;"> --> </span>
+
+                        {% endif %}
+
+                        <!-- Arrow ends -->
+                        
+                        <!-- Product Side Starts -->
+                        
+                        {% for prod_comp in eq.product.compounds %}
+
+                            <!-- Multiplier -->
+                            {% if prod_comp.multiplier != 1 %}
+                                {{ prod_comp.multiplier }}
+                            {% endif %}
+
+                            {% for comp in data.comp_json_dict %}
+                                {% if comp.comp_id == prod_comp.comp_id %}
+                                    <!-- text updating , making numbers down to the alphabets -->
+                                    
+                                    {% for char in comp.symbol %}
+                                        {% if char in data.num_dict %}
+                                            <sub>{{ char }}</sub>
+                                        {% else %}
+                                            {{ char }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <!-- State of the compound -->
+                                    <sub>(
+                                        {{ prod_comp.state }}
+                                    )</sub>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if prod_comp != eq.product.compounds|last %}
+                                <pre style="display: inline;" >  +  </pre>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- Product Side Ends -->
+
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>

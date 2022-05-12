@@ -1,0 +1,70 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(32, 29, 29);
+}
+
+/* .titleBar {
+    display: flex;
+} */
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: white;
+    padding-top: 4rem;
+    /* width: 80vw; */
+    /* flex: 9; */
+}
+
+/* #filterButton {
+    height: 2.1rem;
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    background-color: rgb(96, 211, 96);
+    width: 5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 5rem;
+    margin-right: 5rem;
+    flex: 1;
+} */
+
+table * {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.7rem;
+}
+
+table {
+    margin-top: 5rem;
+}
+
+tr {
+    width: 100vw;
+    display: flex;
+}
+
+.row1 {
+    flex: 2;
+    border-right: 2px white solid;
+}
+
+.row2 {
+    flex: 8;
+}
+
+th {
+    border-bottom: 2px white solid;
+}
+
+.mg-2 {
+    padding: 10px 0px;
+}

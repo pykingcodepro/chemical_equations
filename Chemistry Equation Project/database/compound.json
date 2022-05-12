@@ -1,0 +1,42 @@
+[
+    {
+        "comp_id": 0,
+        "name": [
+            "Hydrogen Gas"
+        ],
+        "symbol": "H2"
+    },
+    {
+        "comp_id": 1,
+        "name": [
+            "Oxygen Gas"
+        ],
+        "symbol": "O2"
+    },
+    {
+        "comp_id": 2,
+        "name": [
+            "Water"
+        ],
+        "symbol": "H2O"
+    },
+    {
+        "comp_id": 3,
+        "name": [
+            "Carbon Dioxide"
+        ],
+        "symbol": "CO2"
+    },
+    {
+        "comp_id": 4,
+        "name": [
+            "Glucose"
+        ],
+        "symbol": "C6H12O6"
+    },
+    {
+        "comp_id": 5,
+        "name": "Nitrogen Gas",
+        "symbol": "N2"
+    }
+]

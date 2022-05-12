@@ -1,0 +1,108 @@
+[
+    {
+        "eq_id": 0,
+        "eq_name": "",
+        "reactant": {
+            "compounds": [
+                {
+                    "comp_id": 0,
+                    "multiplier": 2,
+                    "state": "g"
+                },
+                {
+                    "comp_id": 1,
+                    "multiplier": 1,
+                    "state": "g"
+                }
+            ]
+        },
+        "arrow": {
+            "conditions": {},
+            "catalyst": [],
+            "isRevesible": false
+        },
+        "product": {
+            "compounds": [
+                {
+                    "comp_id": 2,
+                    "multiplier": 2,
+                    "state": "l"
+                }
+            ]
+        }
+    },
+    {
+        "eq_id": 1,
+        "eq_name": "Photosynthesis",
+        "reactant": {
+            "compounds": [
+                {
+                    "comp_id": 2,
+                    "multiplier": 6,
+                    "state": "l"
+                },
+                {
+                    "comp_id": 3,
+                    "multiplier": 6,
+                    "state": "g"
+                }
+            ]
+        },
+        "arrow": {
+            "conditions": {
+                "Elements": [
+                    "Sunlight",
+                    "Chlorophyl"
+                ]
+            },
+            "catalyst": [],
+            "isRevesible": false
+        },
+        "product": {
+            "compounds": [
+                {
+                    "comp_id": 4,
+                    "multiplier": 1,
+                    "state": "s"
+                },
+                {
+                    "comp_id": 1,
+                    "multiplier": 6,
+                    "state": "g"
+                }
+            ]
+        }
+    },
+    {
+        "eq_id": 2,
+        "eq_name": "",
+        "reactant": {
+            "compounds": [
+                {
+                    "comp_id": 0,
+                    "multiplier": "2",
+                    "state": "g"
+                },
+                {
+                    "comp_id": 1,
+                    "multiplier": "1",
+                    "state": "g"
+                }
+            ]
+        },
+        "arrow": {
+            "conditions": {},
+            "catalyst": [],
+            "isReversible": false
+        },
+        "product": {
+            "compounds": [
+                {
+                    "comp_id": 2,
+                    "multiplier": "2",
+                    "state": "l"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,105 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(32, 29, 29);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: white;
+    padding-top: 4rem;
+    width: 100vw;
+}
+
+.addForm > form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.addForm form input[type="text"], input[type="number"] {
+    width: 30rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.addForm form input[type="submit"] {
+    height: 2.1rem;
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 20px;
+    background-color: rgb(96, 211, 96);
+    width: 5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+#EqnForm {
+    width: 100vw;
+    display: inline;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    color: white;
+    width: 33vw;
+    display: inline-block;
+}
+
+.side {
+    width: 33vw;
+    margin-right: 0px;
+    display: inline-block;
+}
+
+#EqnForm input[type="text"], input[type="number"] {
+    width: 10rem;
+}
+
+#EqnForm .addCompDiv {
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#EqnForm .addCompBtn {
+    border: 2px rgb(96, 211, 96) solid;
+    border-radius: 50%;
+    background-color: rgb(96, 211, 96);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+}
+
+#EqnForm #submitBtn {
+    width: 35%;
+    padding-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#EqnForm #submitBtn input {
+    /* position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 30vw;
+}
+
